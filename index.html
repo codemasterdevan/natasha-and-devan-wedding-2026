@@ -449,7 +449,10 @@
                 <div class="border rounded-xl bg-white shadow-sm overflow-hidden">
                     <button
                     @click="active === 2 ? active = null : active = 2"
-                    class="w-full flex justify-between items-center p-6 text-left"
+                    class="w-full flex justify-between items-center p-6 text-left transition-colors duration-300"
+                    :class="active === 1 
+                        ? 'bg-[var(--plum)] text-white hover:bg-[var(--plum)]' 
+                        : 'bg-white text-gray-800 hover:bg-[var(--plum)] hover:text-white'"
                     >
                     <span class="font-medium text-lg">What time should I arrive?</span>
                     <svg class="w-5 h-5 transition-transform duration-300"
@@ -474,7 +477,10 @@
                 <div class="border rounded-xl bg-white shadow-sm overflow-hidden">
                     <button
                     @click="active === 3 ? active = null : active = 3"
-                    class="w-full flex justify-between items-center p-6 text-left"
+                    class="w-full flex justify-between items-center p-6 text-left transition-colors duration-300"
+                    :class="active === 1 
+                        ? 'bg-[var(--plum)] text-white hover:bg-[var(--plum)]' 
+                        : 'bg-white text-gray-800 hover:bg-[var(--plum)] hover:text-white'"
                     >
                     <span class="font-medium text-lg">Can I bring a plus one?</span>
                     <svg class="w-5 h-5 transition-transform duration-300"
@@ -500,7 +506,10 @@
                 <div class="border rounded-xl bg-white shadow-sm overflow-hidden">
                     <button
                     @click="active === 4 ? active = null : active = 4"
-                    class="w-full flex justify-between items-center p-6 text-left"
+                    class="w-full flex justify-between items-center p-6 text-left transition-colors duration-300"
+                    :class="active === 1 
+                        ? 'bg-[var(--plum)] text-white hover:bg-[var(--plum)]' 
+                        : 'bg-white text-gray-800 hover:bg-[var(--plum)] hover:text-white'"
                     >
                     <span class="font-medium text-lg">Are children invited?</span>
                     <svg class="w-5 h-5 transition-transform duration-300"
@@ -524,7 +533,10 @@
                 <div class="border rounded-xl bg-white shadow-sm overflow-hidden">
                     <button
                     @click="active === 5 ? active = null : active = 5"
-                    class="w-full flex justify-between items-center p-6 text-left"
+                    class="w-full flex justify-between items-center p-6 text-left transition-colors duration-300"
+                    :class="active === 1 
+                        ? 'bg-[var(--plum)] text-white hover:bg-[var(--plum)]' 
+                        : 'bg-white text-gray-800 hover:bg-[var(--plum)] hover:text-white'"
                     >
                     <span class="font-medium text-lg">Is parking available?</span>
                     <svg class="w-5 h-5 transition-transform duration-300"
@@ -603,7 +615,10 @@
                 <div class="border rounded-xl bg-white shadow-sm overflow-hidden">
                     <button
                     @click="active === 6 ? active = null : active = 6"
-                    class="w-full flex justify-between items-center p-6 text-left"
+                    class="w-full flex justify-between items-center p-6 text-left transition-colors duration-300"
+                    :class="active === 1 
+                        ? 'bg-[var(--plum)] text-white hover:bg-[var(--plum)]' 
+                        : 'bg-white text-gray-800 hover:bg-[var(--plum)] hover:text-white'"
                     >
                     <span class="font-medium text-lg">What if I have dietary restrictions?</span>
                     <svg class="w-5 h-5 transition-transform duration-300"
@@ -628,7 +643,10 @@
                 <div class="border rounded-xl bg-white shadow-sm overflow-hidden">
                     <button
                     @click="active === 8 ? active = null : active = 8"
-                    class="w-full flex justify-between items-center p-6 text-left"
+                    class="w-full flex justify-between items-center p-6 text-left transition-colors duration-300"
+                    :class="active === 1 
+                        ? 'bg-[var(--plum)] text-white hover:bg-[var(--plum)]' 
+                        : 'bg-white text-gray-800 hover:bg-[var(--plum)] hover:text-white'"
                     >
                     <span class="font-medium text-lg">Is there a hotel block reserved?</span>
                     <svg class="w-5 h-5 transition-transform duration-300"
