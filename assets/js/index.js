@@ -1,13 +1,50 @@
 // ==========================
+// Global Elements (define ONCE)
+// ==========================
+const intro = document.getElementById("introScreen");
+const mainContent = document.getElementById("mainContent");
+
+const progressBar = document.getElementById("progressBar");
+const backToTop = document.getElementById("backToTop");
+
+const menuBtn = document.getElementById("menuBtn");
+const burgerIcon = document.getElementById("burgerIcon");
+const mobileMenu = document.getElementById("mobileMenu");
+const mobileLinks = document.querySelectorAll("#mobileMenu a");
+
+// Hide/show mobile menu UI until intro is completed
+function setMobileMenuEnabled(enabled) {
+  if (!menuBtn || !mobileMenu) return;
+
+  if (enabled) {
+    menuBtn.classList.remove("hidden");
+    menuBtn.style.pointerEvents = "auto";
+    menuBtn.setAttribute("aria-hidden", "false");
+
+    // Keep menu closed by default when enabling
+    mobileMenu.classList.add("translate-x-full");
+    mobileMenu.classList.remove("translate-x-0");
+    mobileMenu.style.pointerEvents = "auto";
+    mobileMenu.setAttribute("aria-hidden", "false");
+  } else {
+    // Force closed + hide button
+    if (burgerIcon) burgerIcon.classList.remove("open");
+    menuBtn.classList.add("hidden");
+    menuBtn.classList.remove("open");
+    menuBtn.style.pointerEvents = "none";
+    menuBtn.setAttribute("aria-hidden", "true");
+
+    mobileMenu.classList.add("translate-x-full");
+    mobileMenu.classList.remove("translate-x-0");
+    mobileMenu.style.pointerEvents = "none";
+    mobileMenu.setAttribute("aria-hidden", "true");
+  }
+}
+
+// ==========================
 // DOM Ready (Intro Handling)
 // ==========================
 document.addEventListener("DOMContentLoaded", () => {
-
-  const intro = document.getElementById("introScreen");
-  const progressBar = document.getElementById("progressBar");
-  const backToTop = document.getElementById("backToTop");
-  const mainContent = document.getElementById("mainContent");
-
   if (!intro) return;
 
   // Prepare smooth fade-in
@@ -16,24 +53,28 @@ document.addEventListener("DOMContentLoaded", () => {
     mainContent.style.transition = "opacity 0.8s ease";
   }
 
-  // If intro completed THIS SESSION
-  if (sessionStorage.getItem("introCompleted") === "true") {
+  const introDone = sessionStorage.getItem("introCompleted") === "true";
 
+  if (introDone) {
     intro.style.display = "none";
     document.body.classList.remove("overflow-hidden");
 
     if (progressBar) progressBar.classList.remove("hidden");
     if (backToTop) backToTop.classList.remove("hidden");
 
-    // Smooth fade-in
+    // ✅ Allow mobile menu ONLY after intro
+    setMobileMenuEnabled(true);
+
     setTimeout(() => {
       if (mainContent) mainContent.style.opacity = "1";
     }, 50);
-
   } else {
+    // ✅ Hide mobile menu until they enter through intro
+    setMobileMenuEnabled(false);
+
+    // If you want content visible behind intro, keep this:
     if (mainContent) mainContent.style.opacity = "1";
   }
-
 });
 
 
@@ -41,22 +82,15 @@ document.addEventListener("DOMContentLoaded", () => {
 // Enter Site Intro Animation
 // ==========================
 function enterSite() {
-
   const flap = document.querySelector(".flap");
-  const intro = document.getElementById("introScreen");
-  const progressBar = document.getElementById("progressBar");
-
   if (!flap || !intro) return;
 
-  // Open envelope flap
   flap.style.transform = "rotateX(180deg)";
 
   setTimeout(() => {
-
     intro.style.opacity = "0";
 
     setTimeout(() => {
-
       intro.style.display = "none";
       document.body.classList.remove("overflow-hidden");
 
@@ -65,9 +99,10 @@ function enterSite() {
       // Mark intro as completed for THIS SESSION ONLY
       sessionStorage.setItem("introCompleted", "true");
 
-    }, 1000); // fade duration
-
-  }, 800); // flap duration
+      // ✅ Now reveal/enable mobile menu
+      setMobileMenuEnabled(true);
+    }, 1000);
+  }, 800);
 }
 
 
@@ -106,7 +141,6 @@ window.addEventListener("scroll", () => {
 
   const progress = (scrollTop / scrollHeight) * 100;
 
-  const bar = document.getElementById("progressBar");
   if (bar) bar.style.width = progress + "%";
 
 });
@@ -119,7 +153,6 @@ const menuBtn = document.getElementById("menuBtn");
 const burgerIcon = document.getElementById("burgerIcon");
 const mobileMenu = document.getElementById("mobileMenu");
 const mobileLinks = document.querySelectorAll("#mobileMenu a");
-const progressBar = document.getElementById("progressBar");
 
 if (menuBtn && burgerIcon && mobileMenu) {
 
