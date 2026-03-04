@@ -418,10 +418,13 @@
             <div x-data="{ active: null }" class="space-y-4">
 
                 <!-- 1 -->
-                <div class="border rounded-xl bg-white shadow-sm">
+                <div class="border rounded-xl bg-white shadow-sm overflow-hidden">
                     <button
                     @click="active === 1 ? active = null : active = 1"
-                    class="w-full flex justify-between items-center p-6 text-left"
+                    class="w-full flex justify-between items-center p-6 text-left transition-colors duration-300"
+                    :class="active === 1 
+                        ? 'bg-[var(--plum)] text-white hover:bg-[var(--plum)]' 
+                        : 'bg-white text-gray-800 hover:bg-[var(--plum)] hover:text-white'"
                     >
                     <span class="font-medium text-lg">What is the dress code?</span>
                     <svg class="w-5 h-5 transition-transform duration-300"
@@ -435,7 +438,7 @@
                     <div
                     x-show="active === 1"
                     x-collapse
-                    class="px-6 pb-6 text-gray-600"
+                    class="p-6 text-gray-600"
                     >
                     Our wedding attire is semi-formal. Suits, dress shirts, cocktail dresses,
                     and elegant jumpsuits are perfect. Please avoid overly casual wear.
@@ -443,7 +446,7 @@
                 </div>
 
                 <!-- 2 -->
-                <div class="border rounded-xl bg-white shadow-sm">
+                <div class="border rounded-xl bg-white shadow-sm overflow-hidden">
                     <button
                     @click="active === 2 ? active = null : active = 2"
                     class="w-full flex justify-between items-center p-6 text-left"
@@ -460,7 +463,7 @@
                     <div
                     x-show="active === 2"
                     x-collapse
-                    class="px-6 pb-6 text-gray-600"
+                    class="p-6 text-gray-600"
                     >
                     Please plan to arrive 20–30 minutes before the ceremony begins
                     so everyone can be seated comfortably.
@@ -468,7 +471,7 @@
                 </div>
 
                 <!-- 3 -->
-                <div class="border rounded-xl bg-white shadow-sm">
+                <div class="border rounded-xl bg-white shadow-sm overflow-hidden">
                     <button
                     @click="active === 3 ? active = null : active = 3"
                     class="w-full flex justify-between items-center p-6 text-left"
@@ -485,7 +488,7 @@
                     <div
                     x-show="active === 3"
                     x-collapse
-                    class="px-6 pb-6 text-gray-600"
+                    class="p-6 text-gray-600"
                     >
                     If your invitation includes a guest, their name will appear
                     on your RSVP. Unfortunately, we’re unable to accommodate
@@ -494,7 +497,7 @@
                 </div>
 
                 <!-- 4 -->
-                <div class="border rounded-xl bg-white shadow-sm">
+                <div class="border rounded-xl bg-white shadow-sm overflow-hidden">
                     <button
                     @click="active === 4 ? active = null : active = 4"
                     class="w-full flex justify-between items-center p-6 text-left"
@@ -511,14 +514,14 @@
                     <div
                     x-show="active === 4"
                     x-collapse
-                    class="px-6 pb-6 text-gray-600"
+                    class="p-6 text-gray-600"
                     >
                     Yes, of course! We would love to celebrate with your little ones and can’t wait to have them join us on our special day. 💕
                     </div>
                 </div>
 
                 <!-- 5 -->
-                <div class="border rounded-xl bg-white shadow-sm">
+                <div class="border rounded-xl bg-white shadow-sm overflow-hidden">
                     <button
                     @click="active === 5 ? active = null : active = 5"
                     class="w-full flex justify-between items-center p-6 text-left"
@@ -535,7 +538,7 @@
                     <div
                     x-show="active === 5"
                     x-collapse
-                    class="px-6 pb-6 text-gray-600"
+                    class="p-6 text-gray-600"
                     >
                         <div class="space-y-6 text-gray-800">
                             <p class="text-base">
@@ -597,7 +600,7 @@
                 </div>
 
                 <!-- 6 -->
-                <div class="border rounded-xl bg-white shadow-sm">
+                <div class="border rounded-xl bg-white shadow-sm overflow-hidden">
                     <button
                     @click="active === 6 ? active = null : active = 6"
                     class="w-full flex justify-between items-center p-6 text-left"
@@ -614,7 +617,7 @@
                     <div
                     x-show="active === 6"
                     x-collapse
-                    class="px-6 pb-6 text-gray-600"
+                    class="p-6 text-gray-600"
                     >
                     Please let us know about any dietary needs when you RSVP,
                     and we’ll ensure suitable meal options are available.
@@ -622,7 +625,7 @@
                 </div>
 
                 <!-- 8 -->
-                <div class="border rounded-xl bg-white shadow-sm">
+                <div class="border rounded-xl bg-white shadow-sm overflow-hidden">
                     <button
                     @click="active === 8 ? active = null : active = 8"
                     class="w-full flex justify-between items-center p-6 text-left"
@@ -639,7 +642,7 @@
                     <div
                     x-show="active === 8"
                     x-collapse
-                    class="px-6 pb-6 text-gray-600"
+                    class="p-6 text-gray-600"
                     >
                     No. But please see the <a href="#Accommodation" class="underline">Accommodation</a> section below for nearby hotels and guesthouses, along with directions and booking links.
                     </div>
