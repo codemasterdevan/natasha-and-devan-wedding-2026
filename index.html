@@ -513,8 +513,7 @@
                     x-collapse
                     class="px-6 pb-6 text-gray-600"
                     >
-                    While we adore your little ones, our wedding will be
-                    an adults-only celebration. We appreciate your understanding.
+                    Yes, of course! We would love to celebrate with your little ones and can’t wait to have them join us on our special day. 💕
                     </div>
                 </div>
 
@@ -538,8 +537,62 @@
                     x-collapse
                     class="px-6 pb-6 text-gray-600"
                     >
-                    Yes! Complimentary parking is available at the venue.
-                    There will also be clear signage to guide you upon arrival.
+                        <div class="space-y-6 text-gray-800">
+                            <p class="text-base">
+                                Parking is available at both the ceremony and reception venues. Please see the details below for specific information about each location. Clear signage will also be in place to help guide you on arrival.
+                            </p>
+
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Ceremony:</h3>
+                                <p class="mb-3">
+                                There is on-street pay-and-display parking, as well as several pay-on-return car parks nearby. 
+                                Full details can be found here:
+                                <a 
+                                    href="https://www.chesterfield.gov.uk/parking-roads-and-travel/parking-car-parks-and-parking-fines/car-parks-in-chesterfield/find-car-parking-in-chesterfield/" 
+                                    target="_blank" 
+                                    class="text-blue-600 underline hover:text-blue-800"
+                                >
+                                    Find car parking in Chesterfield
+                                </a>.
+                                </p>
+
+                                <div class="bg-gray-50 p-4 rounded-lg shadow-sm">
+                                <h4 class="font-semibold">Rose Hill Way Parking</h4>
+                                <p>Rose Hill W, Chesterfield S40 1LG</p>
+                                <p class="mt-2">Pay-on-return surface car park</p>
+                                <p>Charges apply Monday to Sunday, 8am – 8pm</p>
+
+                                <ul class="list-disc list-inside mt-2 space-y-1">
+                                    <li>Up to 1 hour – £2.20</li>
+                                    <li>Up to 2 hours – £3.70</li>
+                                    <li>Up to 3 hours – £4.10</li>
+                                    <li>Up to 4 hours – £6.00</li>
+                                    <li>Each additional hour after 4 hours – £2.20 per hour</li>
+                                </ul>
+
+                                <div class="mt-3">
+                                    <p><strong>Facilities:</strong></p>
+                                    <ul class="list-disc list-inside space-y-1">
+                                    <li>242 spaces</li>
+                                    <li>9 Blue Badge spaces</li>
+                                    <li>No height restrictions</li>
+                                    <li>7 parent and child spaces</li>
+                                    </ul>
+                                </div>
+
+                                <p class="mt-3 text-sm text-gray-600">
+                                    Please note: part of this car park may be closed due to town centre redevelopment work.
+                                </p>
+                                </div>
+                            </div>
+
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Reception:</h3>
+                                <p>
+                                Free parking is available at the reception venue. Please note that parking is shared with the leisure centre and staff, so we recommend allowing a little extra time on arrival.
+                                </p>
+                            </div>
+                        </div>
                     </div>
                 </div>
 
@@ -549,7 +602,7 @@
                     @click="active === 6 ? active = null : active = 6"
                     class="w-full flex justify-between items-center p-6 text-left"
                     >
-                    <span class="font-medium text-lg">Will the ceremony and reception be at the same location?</span>
+                    <span class="font-medium text-lg">What if I have dietary restrictions?</span>
                     <svg class="w-5 h-5 transition-transform duration-300"
                         :class="active === 6 ? 'rotate-180' : ''"
                         fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -560,31 +613,6 @@
 
                     <div
                     x-show="active === 6"
-                    x-collapse
-                    class="px-6 pb-6 text-gray-600"
-                    >
-                    Yes, both the ceremony and reception will take place
-                    at the same venue, so no additional travel is required.
-                    </div>
-                </div>
-
-                <!-- 7 -->
-                <div class="border rounded-xl bg-white shadow-sm">
-                    <button
-                    @click="active === 7 ? active = null : active = 7"
-                    class="w-full flex justify-between items-center p-6 text-left"
-                    >
-                    <span class="font-medium text-lg">What if I have dietary restrictions?</span>
-                    <svg class="w-5 h-5 transition-transform duration-300"
-                        :class="active === 7 ? 'rotate-180' : ''"
-                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                            d="M19 9l-7 7-7-7" />
-                    </svg>
-                    </button>
-
-                    <div
-                    x-show="active === 7"
                     x-collapse
                     class="px-6 pb-6 text-gray-600"
                     >
@@ -613,8 +641,7 @@
                     x-collapse
                     class="px-6 pb-6 text-gray-600"
                     >
-                    Yes, we’ve reserved a block of rooms at a nearby hotel.
-                    Please check the Travel section of our website for booking details.
+                    No. But please see the <a href="#Accommodation" class="underline">Accommodation</a> section below for nearby hotels and guesthouses, along with directions and booking links.
                     </div>
                 </div>
             </div>
