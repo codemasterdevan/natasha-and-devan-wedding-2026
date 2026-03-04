@@ -433,6 +433,13 @@ footer {background:var(--plum);font-weight:bold;}
     }
 }
 
+
+/* ==========================
+   Timeline Section
+========================== */
+#faq .border {border:2px solid var(--plum);}
+#faq button {cursor:pointer;}
+
 /* Min-Width */
 @media (min-width: 767px){
     .timeline-block:nth-child(even) {
