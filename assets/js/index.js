@@ -149,11 +149,6 @@ window.addEventListener("scroll", () => {
 // ==========================
 // Mobile Menu (Full Controlled Version)
 // ==========================
-const menuBtn = document.getElementById("menuBtn");
-const burgerIcon = document.getElementById("burgerIcon");
-const mobileMenu = document.getElementById("mobileMenu");
-const mobileLinks = document.querySelectorAll("#mobileMenu a");
-
 if (menuBtn && burgerIcon && mobileMenu) {
 
   menuBtn.addEventListener("click", () => {
@@ -395,8 +390,6 @@ document.addEventListener("DOMContentLoaded", function () {
 // ==========================
 // Back to Top
 // ==========================
-const backToTop = document.getElementById("backToTop");
-
 if (backToTop) {
 
   // Show only after scrolling
