@@ -370,7 +370,7 @@ a {color:var(--plum);font-weight:bold;}
     background-color: #fff;
     display: grid;
     place-content: center;
-    z-index: 99;
+    z-index: 9;
 }
 .timeline-block:nth-child(odd) .timeline-icon {
     left:0;
