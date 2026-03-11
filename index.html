@@ -639,6 +639,33 @@
                     </div>
                 </div>
 
+                <!-- 7 -->
+                <div class="border rounded-xl bg-white shadow-sm overflow-hidden">
+                    <button
+                    @click="active === 7 ? active = null : active = 7"
+                    class="w-full flex justify-between items-center p-6 text-left transition-colors duration-300"
+                    :class="active === 7 
+                        ? 'bg-[var(--plum)] text-white hover:bg-[var(--plum)]' 
+                        : 'bg-white text-gray-800 hover:bg-[var(--plum)] hover:text-white'"
+                    >
+                    <span class="font-medium text-lg">Do you have a gift list?</span>
+                    <svg class="w-5 h-5 transition-transform duration-300"
+                        :class="active === 7 ? 'rotate-180' : ''"
+                        fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="M19 9l-7 7-7-7" />
+                    </svg>
+                    </button>
+
+                    <div
+                    x-show="active === 7"
+                    x-collapse
+                    class="p-6 text-gray-600"
+                    >
+                    We don’t have a traditional gift list — having you there to celebrate with us is the most important thing to us! If you were thinking of getting us a gift, we’re currently saving towards our honeymoon and a house, so a contribution or an Amazon voucher would be greatly appreciated. That said, anything you’d like to give would be truly lovely. 😊
+                    </div>
+                </div>
+
                 <!-- 8 -->
                 <div class="border rounded-xl bg-white shadow-sm overflow-hidden">
                     <button
