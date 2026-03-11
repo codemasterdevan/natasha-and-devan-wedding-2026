@@ -312,7 +312,7 @@ a {color:var(--plum);font-weight:bold;}
     aspect-ratio: 1;
     clip-path: shape(from 50% 91%, line to 90% 50%, arc to 50% 9% of 1%, arc to 10% 50% of 1%);
     background: var(--bubblegum);
-    margin: 0 auto;
+    margin: 0 0 0 auto;
     box-shadow: 0 10px 30px var(--bubblegum);
 }
 
