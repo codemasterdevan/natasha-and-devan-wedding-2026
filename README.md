@@ -41,7 +41,7 @@ https://natashawedsdevan26.co.uk
 
 ## 📸 Preview
 
-![Homepage Preview](screenshot.jpg)
+![Homepage Preview](Screenshot.jpg)
 
 ## 📄 Licence
 
